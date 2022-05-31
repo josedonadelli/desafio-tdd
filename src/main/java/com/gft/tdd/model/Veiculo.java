@@ -10,6 +10,22 @@ public class Veiculo {
 	private int litrosCombustivel;
 	private int velocidade;
 	private double preco;
+	
+	public Veiculo(String marca, String modelo, String placa, String cor, float km, boolean isLigado,
+			int litrosCombustivel, int velocidade, double preco) {
+		this.marca = marca;
+		this.modelo = modelo;
+		this.placa = placa;
+		this.cor = cor;
+		this.km = km;
+		this.isLigado = isLigado;
+		this.litrosCombustivel = litrosCombustivel;
+		this.velocidade = velocidade;
+		this.preco = preco;
+	}
+	public Veiculo() {
+		
+	}
 	public String getMarca() {
 		return marca;
 	}
@@ -63,6 +79,12 @@ public class Veiculo {
 	}
 	public void setPreco(double preco) {
 		this.preco = preco;
+	}
+	@Override
+	public String toString() {
+		return "Veiculo [marca=" + marca + ", modelo=" + modelo + ", placa=" + placa + ", cor=" + cor + ", km=" + km
+				+ ", isLigado=" + isLigado + ", litrosCombustivel=" + litrosCombustivel + ", velocidade=" + velocidade
+				+ ", preco=" + preco + "]";
 	}
 	
 }
