@@ -1,7 +1,7 @@
 package com.gft.tdd.main;
 
-import com.gft.tdd.model.Veiculo;
-import com.gft.tdd.service.VeiculoService;
+import com.gft.tdd.model.veiculo.Veiculo;
+import com.gft.tdd.service.veiculo.VeiculoService;
 
 public class RunVeiculo {
 

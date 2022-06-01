@@ -1,6 +1,6 @@
-package com.gft.tdd.service;
+package com.gft.tdd.service.veiculo;
 
-import com.gft.tdd.model.Veiculo;
+import com.gft.tdd.model.veiculo.Veiculo;
 
 public class VeiculoService {
 	private Veiculo veiculo;

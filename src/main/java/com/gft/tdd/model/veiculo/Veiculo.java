@@ -1,4 +1,4 @@
-package com.gft.tdd.model;
+package com.gft.tdd.model.veiculo;
 
 public class Veiculo {
 	private String marca;
