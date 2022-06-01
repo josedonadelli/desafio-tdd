@@ -8,12 +8,16 @@ import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 
+import com.gft.tdd.model.pessoa.BuscaMaisVelha;
+import com.gft.tdd.model.pessoa.BuscaMaisVelha.*;
+import com.gft.tdd.model.pessoa.BuscaNome;
+import com.gft.tdd.model.pessoa.ImprimeLista;
 import com.gft.tdd.model.pessoa.Pessoa;
 import com.gft.tdd.model.pessoa.RemoveMenores;
 
 public class ListaDePessoasTest {
 	private List<Pessoa>pessoas;
-	
+	private int esperado;
 	@Before
 	public void setup() {
 		pessoas = new ArrayList<Pessoa>();
@@ -39,16 +43,39 @@ public class ListaDePessoasTest {
 	public void deveRemoverPessoasMenoresDeIdadeDaLista() throws Exception {
 		pessoas.add(new Pessoa("Joao", 15));
 		pessoas.add(new Pessoa("Fernanda", 27));
-		int qtdPessoasMenores = 1;
 		List<Pessoa>pessoasMaiores = RemoveMenores.removeMenores(pessoas);
+		int qtdPessoasMenores = 1;
 		assertEquals(pessoas.size()-qtdPessoasMenores, pessoasMaiores.size());
 	}
 	
 	@Test
 	public void deveImprimirAsInformacoesDasPessoasDaLista() throws Exception {
-		
+		pessoas.add(new Pessoa("Joao", 15));
+		pessoas.add(new Pessoa("Fernanda", 27));
+		pessoas.add(new Pessoa("Tomas", 29));
+		ImprimeLista.imprimeLista(pessoas);
 	}
 	
+	@Test
+	public void deveEncontrarAPessoaMaisVelha() throws Exception {
+		pessoas.add(new Pessoa("Joao", 15));
+		pessoas.add(new Pessoa("Fernanda", 27));
+		pessoas.add(new Pessoa("Tomas", 29));
+		
+		Pessoa pessoa = BuscaMaisVelha.buscaMaisVelha(pessoas);
+		System.out.println(pessoa.toString());
+	}
+	
+	@Test
+	public void deveBuscarNomeEspecificoERetornarAIdade() throws Exception {
+		pessoas.add(new Pessoa("Joao", 15));
+		pessoas.add(new Pessoa("Fernanda", 27));
+		pessoas.add(new Pessoa("Jessica", 29));
+		esperado = 27;
+		String nome = "Fernanda";
+		
+		assertEquals(esperado, BuscaNome.buscaNome(pessoas, nome));
+	}
 	
 	
 	
