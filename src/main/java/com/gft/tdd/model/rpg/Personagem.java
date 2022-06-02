@@ -1,6 +1,7 @@
-package com.gft.tdd.rpg.model;
+package com.gft.tdd.model.rpg;
 
 public class Personagem {
+	private static int cont=0;
 	private String nome;
 	private int vida;
 	private int mana;
@@ -19,6 +20,7 @@ public class Personagem {
 		this.inteligencia = inteligencia;
 		this.forca = forca;
 		this.level = level;
+		cont++;
 	}
 	
 	public Personagem(String nome) {
@@ -29,11 +31,12 @@ public class Personagem {
 		inteligencia = 3;
 		forca = 3;
 		level = 1;
+		cont++;
 	}
-
-
-
-
+	
+	public int getCont() {
+		return cont;
+	}
 
 	public String getNome() {
 		return nome;
@@ -92,7 +95,11 @@ public class Personagem {
 	}
 
 	public void lvlUp() {
-		this.level +=1;
+		LevelUp.lvlUp(this);
 	}
+
+
+	
+	
 	
 }

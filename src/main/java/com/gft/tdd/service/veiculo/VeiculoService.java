@@ -11,10 +11,9 @@ public class VeiculoService {
 	}
 	
 	public void ligar() {
-		velocidade = veiculo.getVelocidade();
+		
 		if(!veiculo.isLigado())
 			veiculo.setLigado(true);
-		//return veiculo;
 	}
 	public void desligar() {
 		velocidade = veiculo.getVelocidade();
@@ -39,7 +38,6 @@ public class VeiculoService {
 		}else if(velocidade>0) {
 			veiculo.setVelocidade(0);
 		}
-		
 	}
 
 	public void pintar(String string) {
