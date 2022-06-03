@@ -5,11 +5,11 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.gft.tdd.model.rpg.Ataque;
-import com.gft.tdd.model.rpg.Guerreiro;
-import com.gft.tdd.model.rpg.LevelUp;
-import com.gft.tdd.model.rpg.Mago;
-import com.gft.tdd.model.rpg.Personagem;
+import com.gft.tdd.rpg.model.Ataque;
+import com.gft.tdd.rpg.model.Guerreiro;
+import com.gft.tdd.rpg.model.LevelUp;
+import com.gft.tdd.rpg.model.Mago;
+import com.gft.tdd.rpg.model.Personagem;
 
 public class RpgTest {
 	Mago mago;

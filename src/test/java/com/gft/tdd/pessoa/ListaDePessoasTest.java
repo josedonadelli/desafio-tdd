@@ -8,12 +8,12 @@ import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.gft.tdd.model.pessoa.BuscaMaisVelha;
-import com.gft.tdd.model.pessoa.BuscaMaisVelha.*;
-import com.gft.tdd.model.pessoa.BuscaNome;
-import com.gft.tdd.model.pessoa.ImprimeLista;
-import com.gft.tdd.model.pessoa.Pessoa;
-import com.gft.tdd.model.pessoa.RemoveMenores;
+import com.gft.tdd.pessoa.model.BuscaMaisVelha;
+import com.gft.tdd.pessoa.model.BuscaNome;
+import com.gft.tdd.pessoa.model.ImprimeLista;
+import com.gft.tdd.pessoa.model.Pessoa;
+import com.gft.tdd.pessoa.model.RemoveMenores;
+import com.gft.tdd.pessoa.model.BuscaMaisVelha.*;
 
 public class ListaDePessoasTest {
 	private List<Pessoa>pessoas;
