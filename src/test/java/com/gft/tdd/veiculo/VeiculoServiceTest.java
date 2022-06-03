@@ -31,19 +31,21 @@ public class VeiculoServiceTest {
 	
 	@Test
 	public void devePermitirDesligarCarroLigadoEParado() throws Exception {
+		veiculo.setLigado(true);
 		veiculoService.desligar();
 		assertEquals(false, veiculo.isLigado());
 	}
 	
 	@Test(expected = VeiculoNaoPodeSerDesligadoEmMovimentoException.class)
 	public void deveNegarDesligarVeiculo_CasoEmMovimento() throws Exception {
+		veiculo.setLigado(true);
 		veiculo.setVelocidade(50);
 		veiculoService.desligar();
-		assertEquals(false, veiculo.isLigado());
 	}
 	
 	@Test
 	public void devePermitirAcelerarVeiculo() throws Exception {
+		veiculo.setLigado(true);
 		veiculo.setVelocidade(50);
 		veiculoService.acelerar();
 		assertEquals(70, veiculo.getVelocidade(), 0.0001);

@@ -16,11 +16,12 @@ public class VeiculoService {
 			veiculo.setLigado(true);
 	}
 	public void desligar() {
-		velocidade = veiculo.getVelocidade();
-		if(velocidade!=0) {
-			throw new VeiculoNaoPodeSerDesligadoEmMovimentoException();
-		}else if(veiculo.isLigado())
-			veiculo.setLigado(false);
+		
+			velocidade = veiculo.getVelocidade();
+			if(velocidade!=0) {
+				throw new VeiculoNaoPodeSerDesligadoEmMovimentoException();
+			}else if(veiculo.isLigado())
+				veiculo.setLigado(false);
 		
 	}
 
