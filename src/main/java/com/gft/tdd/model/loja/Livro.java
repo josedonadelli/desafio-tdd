@@ -4,7 +4,6 @@ public class Livro extends Produto implements Imposto{
 	private String autor;
 	private String tema;
 	private int qtdPag;
-	
 	public Livro() {
 		super();
 	}
@@ -34,15 +33,14 @@ public class Livro extends Produto implements Imposto{
 	public void setQtdPag(int qtdPag) {
 		this.qtdPag = qtdPag;
 	}
-
 	public double calculaImposto() {
-		if(this.tema.equals("educativo"))
-			return 0;
-		return this.getPreco()*0.1;
+		return new CalculadoraImpostoLivro(this).calcular();
 	}
-	
-	
-	
+
+	@Override
+	public String toString() {
+		return "[nome=" + this.getNome() + ", autor=" + autor + "]";
+	}
 	
 	
 	

@@ -1,10 +1,9 @@
 package com.gft.tdd.model.loja;
 
-public class VideoGame extends Produto {
+public class VideoGame extends Produto implements Imposto{
 	private String marca;
 	private String modelo;
 	private boolean isUsado;
-	
 	public VideoGame() {
 		super();	
 	}
@@ -34,8 +33,9 @@ public class VideoGame extends Produto {
 	public void setUsado(boolean isUsado) {
 		this.isUsado = isUsado;
 	}
-	
-	
-	
+	public double calculaImposto() {
+		return new CalculadoraImpostoVideoGame(this).calcular();
+		
+	}
 	
 }
