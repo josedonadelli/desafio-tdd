@@ -1,6 +1,7 @@
 package com.gft.tdd.model.loja;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Loja {
@@ -59,6 +60,12 @@ public class Loja {
 
 	public void listaVideoGames() {
 		ImprimeVideoGames.imprimeVideoGames(vGames);
+	}
+
+	public double calculaPatrimonio() {
+		//double total=livros.stream().mapToDouble(i -> (i.getPreco()+i.calculaImposto())*i.getQtd()).sum();
+		return CalculadoraPatrimonioTotal.calcular(livros, vGames);
+		
 	}
 	
 	

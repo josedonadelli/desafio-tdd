@@ -35,7 +35,14 @@ public class VideoGame extends Produto implements Imposto{
 	}
 	public double calculaImposto() {
 		return new CalculadoraImpostoVideoGame(this).calcular();
-		
 	}
+
+	@Override
+	public String toString() {
+		return "[nome=" + this.getNome() +", modelo=" + modelo +  ", isUsado=" + isUsado + "]";
+	}
+	
+	
+	
 	
 }

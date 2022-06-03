@@ -13,7 +13,7 @@ import com.gft.tdd.model.loja.VideoGame;
 public class LojaServiceTest {
 	private Livro livro;
 	private VideoGame vGame;
-	private Loja loja;
+	private Loja loja, lojaA;
 	private List<Livro> livros;
 	private List<VideoGame> games;
 	private double esperado;
@@ -23,7 +23,9 @@ public class LojaServiceTest {
 	public void setup() {
 		livro = new Livro("Harry Potter", 100.0, 10, "J.K. Rolling", "fantasia", 230);
 		vGame = new VideoGame("Xbox", 500, 1, "Microsoft", "360", true);
-		
+		loja = new Loja();
+		livros = new ArrayList<Livro>();
+		games = new ArrayList<VideoGame>();
 	}
 	
 
@@ -57,7 +59,6 @@ public class LojaServiceTest {
 		vGame.setUsado(false);
 		esperado = vGame.getPreco() + vGame.getPreco() * 0.45;
 		totalTest = vGame.getPreco() + vGame.calculaImposto();
-		
 		assertEquals(esperado, totalTest, 0.0001);
 	}
 	
@@ -76,25 +77,49 @@ public class LojaServiceTest {
 	
 	@Test
 	public void deveInformarQueNaoTemLivrosEmEstoque() throws Exception {
-		//loja.listaLivros();
+		loja.listaLivros();
 	}
 	
 	@Test
 	public void deveInformarQueNaoTemVideoGamesEmEstoque() throws Exception {
-		//loja.listaVideoGames();
+		loja.listaVideoGames();
 	}
 	
 	@Test
 	public void deveImprimirLivrosEmEstoque() throws Exception {
-		livros = new ArrayList<Livro>();
-		games = new ArrayList<VideoGame>();
-		Loja lojaA = new Loja("Americanas", "12345678", livros, games);
-		
 		livros.add(new Livro("O Cortico", 100.0, 10, "Aluisio Azevedo", "fantasia", 230));
 		livros.add(livro);
-		
+		lojaA = new Loja("Americanas", "12345678", livros, games);
 		lojaA.listaLivros();
-		lojaA.listaVideoGames();
+		
+	}
+	
+	@Test
+	public void deveImprimirVideoGameEmEstoque() throws Exception {
+		games.add(vGame);
+		games.add(new VideoGame("PS4", 1000, 10, "Sony", "Slim", false));
+		lojaA = new Loja("Americanas", "12345678", livros, games);
+	}
+	
+	@Test
+	public void deveCalcularPatrimonioTotalDaLoja() throws Exception {
+		//preenchendo listas com games e livros
+		livros.add(new Livro("O Cortico", 100.0, 10, "Aluisio Azevedo", "fantasia", 230));
+		livros.add(livro);
+		games.add(vGame);
+		games.add(new VideoGame("PS4", 1000, 10, "Sony", "Slim", false));
+		
+		//instanciando objeto Loja
+		lojaA = new Loja("Americanas", "12345678", livros, games);
+		
+		//somando valores dos produtos
+		esperado = 0;
+		for(Livro livro : livros)
+			esperado += (livro.getPreco() + livro.calculaImposto()) * livro.getQtd();
+		for(VideoGame game : games)
+			esperado += (game.getPreco() + game.calculaImposto()) * game.getQtd();
+		
+		assertEquals(esperado, lojaA.calculaPatrimonio(), 0.0001);
 	}
 	
 }
