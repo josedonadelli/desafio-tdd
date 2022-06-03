@@ -5,7 +5,8 @@ import com.gft.tdd.model.rpg.Guerreiro;
 import com.gft.tdd.model.rpg.Mago;
 
 public class RunRPG {
-	public static void main(String[] args) {
+	
+	public RunRPG() {
 		Mago mago = new Mago("Gandalf");
 		Guerreiro guerreiro = new Guerreiro("Darius");
 		String magia, habilidade;

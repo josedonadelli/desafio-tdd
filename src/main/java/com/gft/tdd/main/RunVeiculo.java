@@ -5,7 +5,7 @@ import com.gft.tdd.service.veiculo.VeiculoService;
 
 public class RunVeiculo {
 
-	public static void main(String[] args) {
+	public RunVeiculo() {
 		Veiculo veiculo = new Veiculo("Ford","Ranger", "0000AAAA", "Amarelo", 0.0f, false, 10, 0, 200000.0);
 		VeiculoService veiculoService = new VeiculoService(veiculo);
 		System.out.println(veiculo.toString());
@@ -35,6 +35,10 @@ public class RunVeiculo {
 		veiculoService.frear();
 		veiculoService.desligar();
 		System.out.println(veiculo.toString());
+		
 	}
+	
+	/*public static void main(String[] args) {
+	}*/
 
 }

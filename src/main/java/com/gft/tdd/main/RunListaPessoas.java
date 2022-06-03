@@ -9,7 +9,8 @@ import com.gft.tdd.model.pessoa.Pessoa;
 import com.gft.tdd.model.pessoa.RemoveMenores;
 
 public class RunListaPessoas {
-	public static void main(String[] args) {
+	
+	public RunListaPessoas() {
 		List<Pessoa> pessoas = new ArrayList<Pessoa>();
 		Pessoa maisVelha;
 		int antes;
@@ -30,7 +31,6 @@ public class RunListaPessoas {
 		
 		pessoas = RemoveMenores.removeMenores(pessoas);
 		ImprimeLista.imprimeLista(pessoas);
-		
 	}
 	
 	
